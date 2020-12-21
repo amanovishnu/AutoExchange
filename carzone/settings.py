@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'pages.apps.PagesConfig',
+    'cars.apps.CarsConfig',
 ]
 
 MIDDLEWARE = [
@@ -117,15 +118,16 @@ USE_L10N = True
 
 USE_TZ = True
 
-
+# print('BASE_DIR',BASE_DIR)
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR,'static')
-STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
-STATICFILES_DIR = [
-    os.path.join(BASE_DIR,'static'),
+# STATIC_ROOT = os.path.join(BASE_DIR,'static')
+# STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
+STATICFILES_DIRS = [
+    # os.path.join(BASE_DIR,'static'),
+    'static'
 ]
 
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')

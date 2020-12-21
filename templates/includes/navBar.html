@@ -3,7 +3,7 @@
 <header class="main-header sticky-header header-with-top">
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light">
-            <a class="navbar-brand company-logo" href="index.html">
+            <a class="navbar-brand company-logo" href="{% url 'home' %}">
                 <img src="{% static 'img/logos/black-logo.png' %}" alt="logo">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar"
@@ -17,29 +17,59 @@
                             aria-haspopup="true" aria-expanded="false">
                             Home
                         </a> -->
-                        <a class="nav-link" href="{% url 'home' %}">
+                        <a
+                            {% if '/' == request.path %}
+                                class="nav-link active"
+                            {% else %}
+                                class="nav-link"
+                            {% endif %}
+                            href="{% url 'home' %}">
                             Home
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="cars.html">
+                        <a
+                        {% if 'cars/' == request.path %}
+                        class="nav-link active"
+                        {% else %}
+                        class="nav-link"
+                        {% endif %}
+                            href="{% url 'cars' %}">
                             Cars
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'about' %}">
+                        <a
+                        {% if 'about' in request.path %}
+                            class="nav-link active"
+                            {% else %}
+                                class="nav-link"
+                            {% endif %}
+                            href="{% url 'about' %}">
                             About
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'services' %}">
+                        <a
+                            {% if 'services' in request.path %}
+                            class="nav-link active"
+                            {% else %}
+                            class="nav-link"
+                            {% endif %}
+                            href="{% url 'services' %}">
                             Services
                         </a>
                     </li>
 
 
                     <li class="nav-item dropdown">
-                        <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+                        <a
+                        {% if 'contact' in request.path %}
+                        class="nav-link active"
+                    {% else %}
+                        class="nav-link"
+                    {% endif %}
+                        href="{% url 'contact' %}">Contact</a>
                     </li>
                     <li class="nav-item dropdown m-hide">
                         <a href="#full-page-search" class="nav-link h-icon">
