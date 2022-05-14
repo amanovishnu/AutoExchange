@@ -1,13 +1,15 @@
 from django.shortcuts import render
-# from django.http import HttpResponse
+from .models import Team
 
 
 def home(request):
-    return render(request, 'pages/home.html')
+    teams = Team.objects.all()
+    return render(request, 'pages/home.html', context={'teams':teams})
 
 
 def about(request):
-    return render(request, 'pages/about.html')
+    teams = Team.objects.all().order_by('id')
+    return render(request, 'pages/about.html', context={'teams':teams})
 
 
 def services(request):
