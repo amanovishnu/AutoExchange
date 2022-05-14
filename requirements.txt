@@ -1,7 +1,14 @@
 asgiref==3.5.0
 certifi==2021.10.8
 Django==3.2.13
+flake8==4.0.1
+importlib-metadata==4.2.0
+mccabe==0.6.1
+mysqlclient==2.1.0
+pycodestyle==2.8.0
+pyflakes==2.4.0
 pytz==2022.1
 sqlparse==0.4.2
 typing_extensions==4.2.0
 wincertstore==0.2
+zipp==3.8.0
