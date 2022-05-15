@@ -1,10 +1,12 @@
-from django.db import models
 from datetime import datetime
+from ckeditor.fields import RichTextField
+from django.db import models
+from multiselectfield import MultiSelectField
 
 
 class Car(models.Model):
 
-    state_choice = (
+    state_choice = [
         ('AL', 'Alabama'),
         ('AK', 'Alaska'),
         ('AZ', 'Arizona'),
@@ -55,12 +57,12 @@ class Car(models.Model):
         ('WA', 'Washington'),
         ('WV', 'West Virginia'),
         ('WI', 'Wisconsin'),
-        ('WY', 'Wyoming'),
-    )
+        ('WY', 'Wyoming')
+    ]
 
     year_choice = [(x,x) for x in range(2000, datetime.now().year+1)]
 
-    features_choices = (
+    features_choices = [
         ('Cruise Control', 'Cruise Control'),
         ('Audio Interface', 'Audio Interface'),
         ('Airbags', 'Airbags'),
@@ -73,16 +75,16 @@ class Car(models.Model):
         ('Direct Fuel Injection', 'Direct Fuel Injection'),
         ('Auto Start/Stop', 'Auto Start/Stop'),
         ('Wind Deflector', 'Wind Deflector'),
-        ('Bluetooth Handset', 'Bluetooth Handset'),
-    )
+        ('Bluetooth Handset', 'Bluetooth Handset')
+    ]
 
-    door_choices = (
+    door_choices = [
         ('2', '2'),
         ('3', '3'),
         ('4', '4'),
         ('5', '5'),
-        ('6', '6'),
-    )
+        ('6', '6')
+    ]
 
     fuel_choices = [
         ('Petrol','Petrol'),
@@ -91,29 +93,62 @@ class Car(models.Model):
         ('Hybrid', 'Hybrid')
     ]
 
+    color_choices = [
+        ('Silver', 'Silver'),
+        ('White', 'White'),
+        ('Black', 'Black'),
+        ('Gray', 'Gray'),
+        ('Red','Red'),
+        ('Blue', 'Blue'),
+        ('Brown', 'Brown'),
+        ('Beige', 'Beige'),
+        ('Orange', 'Orange'),
+        ('Gold', 'Gold'),
+        ('Yellow', 'Yellow'),
+        ('Purple', 'Purple')
+    ]
+
+    body_style_choices = [
+        ('Sedan', 'Sedan'),
+        ('Coupe', 'Coupe'),
+        ('Sports Car', 'Sports Car'),
+        ('Station Wagon', 'Station Wagon'),
+        ('Hatchback', 'Hatchback'),
+        ('Convertible', 'Convertible'),
+        ('SUV', 'SUV'),
+        ('Minivan', 'Minivan'),
+        ('Pickup Truck', 'Pickup Truck')
+    ]
+
+    transmission_choices = [
+        ('Manual', 'Manual'),
+        ('Automatic', 'Automatic'),
+        ('Semi Automatic', 'Semi Automatic')
+    ]
+
     car_title = models.CharField(max_length=255)
-    state = models.CharField(choices=state_choice, max_length=255)
-    city = models.CharField(max_length=255)
-    color = models.CharField(max_length=255)
+    state = models.CharField(choices=state_choice, max_length=255, default='Alabama')
+    city = models.CharField(max_length=255, default='Auburn')
+    color = models.CharField(choices=color_choices, max_length=255, default='White')
     model = models.CharField(max_length=255)
     year = models.IntegerField(choices=year_choice)
     condition = models.CharField(max_length=255)
     price = models.IntegerField()
-    description = models.CharField(max_length=255)
+    description = RichTextField()
     car_photo_0 = models.ImageField(upload_to='photos/%Y/%M%d/')
     car_photo_1 = models.ImageField(upload_to='photos/%Y/%M%d/', blank=True)
     car_photo_2 = models.ImageField(upload_to='photos/%Y/%M%d/', blank=True)
     car_photo_3 = models.ImageField(upload_to='photos/%Y/%M%d/', blank=True)
     car_photo_4 = models.ImageField(upload_to='photos/%Y/%M%d/', blank=True)
-    features = models.CharField(choices = features_choices, max_length=255)
-    body_style = models.CharField(max_length=255)
+    features = MultiSelectField(choices = features_choices)
+    body_style = models.CharField(choices=body_style_choices, max_length=255)
     engine = models.CharField(max_length=255)
-    transmission = models.CharField(max_length=255)
+    transmission = models.CharField(choices=transmission_choices, max_length=255)
     interior = models.CharField(max_length=255)
     miles = models.IntegerField()
-    doors = models.IntegerField(choices=door_choices)
+    doors = models.CharField(choices=door_choices, max_length=255, default='4')
     passengers = models.IntegerField()
-    vin_no = models.CharField(max_length=255)
+    vin_no = models.CharField(max_length=255, default='MSR4562MVM1234USD')
     mileage = models.IntegerField()
     fuel_type = models.CharField(choices=fuel_choices, default='Petrol', max_length=255)
     no_of_owners = models.CharField(max_length=255)
