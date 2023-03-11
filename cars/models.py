@@ -142,6 +142,7 @@ class Car(models.Model):
     ['Cabriolet','Cabriolet'],
     ['Super Car','Super Car']
   ]
+
   car_title = models.CharField(max_length=255)
   state = models.CharField(max_length=100, choices=state_choice)
   city = models.CharField(max_length=100)
