@@ -20,7 +20,6 @@ def home(request):
     'year_field': year_field,
     'body_style_field': body_style_field,
     }
-  print('data ->', data)
   return render(request, 'pages/home.html', context = data)
 
 def about(request):

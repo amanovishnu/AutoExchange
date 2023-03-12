@@ -392,7 +392,7 @@ $(function () {
             centerMode: true,
             centerPadding: '0'
         });
-        
+
         $(this).closest('.slick-slider-area').find('.slick-prev').on("click", function () {
             slider.slick('slickPrev');
         });
@@ -479,3 +479,12 @@ $(function () {
         }
     }).trigger("resize");
 })(jQuery);
+
+
+setTimeout(function () {
+    $('#message').fadeOut('slow')
+}, 5000);
+
+$("#logout_link").click(function () {
+    $("#logout").submit();
+});
