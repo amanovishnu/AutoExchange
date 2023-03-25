@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 {% load humanize %}
+{% load custom_filters %}
 
 {% block title%} Car Inventory {% endblock %}
 
@@ -81,7 +82,7 @@
                 </div>
                 <ul class="facilities-list clearfix">
                   <li>{{car.fuel_type}}</li>
-                  <li>{{car.miles|intcomma}} km</li>
+                  <li>{{car.miles|miles_to_km|intcomma}} km</li>
                   <li>{{car.transmission}}</li>
                   <li>{{car.body_style}}</li>
                   <li>{{car.color}}</li>

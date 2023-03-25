@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 {% load humanize %}
+{% load custom_filters %}
 
 {% block title%} Search Results {% endblock %}
 
@@ -132,7 +133,7 @@
               <div class="facilities-list clearfix">
                 <ul>
                   <li>
-                    <span><i class="flaticon-way"></i></span>{{car.miles|intcomma}} km
+                    <span><i class="flaticon-way"></i></span>{{car.miles|miles_to_km|intcomma}} km
                   </li>
                   <li>
                     <span><i class="flaticon-calendar-1"></i></span>{{car.year}}

@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages, auth
 from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
+from contacts.models import Contact
 
 
 # Create your views here.
@@ -51,12 +53,19 @@ def register(request):
 
     return render(request, 'accounts/register.html')
 
-def dashboard(request):
-    return render(request, 'accounts/dashboard.html')
-
 def logout(request):
     if request.method == 'POST':
         auth.logout(request)
         messages.success(request, 'You have been logged out Successfully')
         return redirect('home')
     return redirect('dashboard')
+
+
+@login_required()
+def dashboard(request):
+    user_id = request.user.id
+    enquiries = Contact.objects.order_by('-created_date').filter(user_id = user_id)
+    data = {
+        'enquiries':enquiries
+    }
+    return render(request, 'accounts/dashboard.html', context=data)
