@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 import os
+import yaml
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -164,9 +165,12 @@ LOGIN_REDIRECT_URL = '/accounts/login'
 
 
 # Email SMTP Configuration
+CONFIG_PATH = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'config.yaml')
+config = yaml.safe_load(open(CONFIG_PATH, 'r'))
+
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'EMAIL_ADDRESS'
-EMAIL_HOST_PASSWORD = 'PASSWORD'
+EMAIL_HOST_USER = config.get('email_address')
+EMAIL_HOST_PASSWORD = config.get('password')
 EMAIL_USE_TLS = True

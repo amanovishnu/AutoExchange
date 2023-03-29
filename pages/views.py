@@ -51,13 +51,13 @@ def contact(request):
       Message: {message}
     '''
 
-    # send_mail(
-    #   subject,
-    #   message_body,
-    #   'dev.geekymano@gmail.com',
-    #   [admin_email_id],
-    #   fail_silently=False
-    # )
+    send_mail(
+      subject,
+      message_body,
+      'dev.geekymano@gmail.com',
+      [email],
+      fail_silently=False
+    )
 
     messages.success(request,'Thank you for contacting us. we will get back to you shortly.')
     return redirect('contact')

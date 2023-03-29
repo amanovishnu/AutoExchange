@@ -43,14 +43,13 @@ def enquiry(request):
         admin_info = User.objects.get(is_superuser=True)
         admin_email_id = admin_info.email
 
-        # send_mail(
-        #     'Enquiry : New Car',
-        #     f'You have a new Enquiry for the car {car_title}, Please login to your admin console for more info',
-        #     'dev.geekymano@gmail.com',
-        #     [admin_email_id],
-        #     fail_silently=False
-        # )
-
+        send_mail(
+            'Enquiry : New Car',
+            f'You have a new Enquiry for the car {car_title}, Please login to your admin console for more info',
+            'dev.geekymano@gmail.com',
+            [email],
+            fail_silently=False
+        )
         contact.save()
         messages.success(request, 'Thankyou, your Request has been submitted, we will get back to you shortly.')
     return redirect('/cars/'+car_id)
