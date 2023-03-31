@@ -3,7 +3,7 @@
 }
 
 .button-theme:hover {
-    background: #dc141d;
+    background:#471AA0;
 }
 
 .btn-border {
@@ -16,12 +16,12 @@
 }
 
 .pages-404 .btn:hover {
-    background: #dc141d;
+    background:#471AA0;
 }
 
 .btn-border:hover{
-    background: #dc141d;
-    border: solid 1px #dc141d;
+    background:#471AA0;
+    border: solid 1px#471AA0;
 }
 
 .blog-2 .b-btn{
@@ -383,7 +383,7 @@ footer .footer-item .contact-info li label a:hover {
 
 .service-info i{
     color:#471AA0;
-    font-size: 50px;
+    font-size: 90px !important;
 }
 
 .counter-box-2 .icon{
