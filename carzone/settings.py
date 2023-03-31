@@ -45,12 +45,14 @@ INSTALLED_APPS = [
     'accounts.apps.AccountsConfig',
     'ckeditor',
     'django.contrib.humanize',
+
+    # social account
     'django.contrib.sites',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
 
-    # Providers
+    # providers
     'allauth.socialaccount.providers.facebook',
     'allauth.socialaccount.providers.google',
 ]
@@ -158,10 +160,11 @@ MESSAGE_TAGS = {
     messages.ERROR: 'danger',
 }
 
+# Social Login
 SITE_ID = 1
 
 LOGIN_URL = '/accounts/login'
-LOGIN_REDIRECT_URL = '/accounts/login'
+LOGIN_REDIRECT_URL = 'dashboard'
 
 
 # Email SMTP Configuration

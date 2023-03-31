@@ -1,6 +1,6 @@
 html, body {
     height: 100%;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Ubuntu', sans-serif !important;
 }
 
 a {
@@ -649,11 +649,11 @@ input[type=checkbox]:checked + label:before {
 }
 
 .top-header .list-inline {
-    padding: 13px 0;
+    padding: 5px 0;
 }
 
 .list-inline a {
-    color: #fff;
+    color: black;
     margin-right: 15px;
     font-size: 14px;
     font-weight: 400;
@@ -919,11 +919,11 @@ input[type=checkbox]:checked + label:before {
 }
 
 .banner-bg {
-    
+
 }
 
 .item-bg {
-    
+
     height: 100vh;
     /*animation: bgburnsEast 25s linear infinite alternate;
     -webkit-animation: bgburnsEast 25s linear infinite alternate;*/
@@ -3312,8 +3312,9 @@ input[type=checkbox]:checked + label:before {
 
 .team-1 .details h4 a{
     font-size: 20px;
-    font-weight: 400;
+    font-weight: 700;
     color: #212121;
+    font-family: 'Ubuntu', sans-serif;
 }
 
 .team-1 .details h4 a:hover{
@@ -3323,7 +3324,8 @@ input[type=checkbox]:checked + label:before {
 .team-1 .details h5 {
     font-size: 15px;
     color: #535353;
-    font-weight: 400;
+    font-weight: 500;
+    font-family: 'Ubuntu', sans-serif;
 }
 
 .team-1 .social-list a:hover{
@@ -4658,7 +4660,7 @@ footer {
 
 /** Listings parallax start **/
 .listings-parallax {
-    
+
     z-index: 0;
     background-position: center center;
     background-repeat: no-repeat;
@@ -5474,7 +5476,7 @@ footer {
 }
 
 .contact-section .bg-img {
-    
+
     background-size: cover;
     top: 0;
     bottom: 0;
@@ -8132,8 +8134,10 @@ table {
     }
 
     .sticky-header .navbar-expand-lg .navbar-nav .nav-link {
-        color: #fff;
+        font-family: 'Ubuntu', sans-serif;
         opacity: 0.9;
+        font-weight: 500;
+        font-size: 16px;
     }
 
     .sh-2 .navbar-expand-lg .navbar-nav .nav-link{
@@ -8168,7 +8172,7 @@ table {
         top: 49px;
         z-index: 9999;
         width: 100%;
-        background: rgba(12,12,12,0.1);
+        background: rgba(255,255,255,0.9);
     }
 
     .mh-4{
@@ -8192,7 +8196,7 @@ table {
     }
 
     .top-header-bg{
-        background: rgba(12,12,12,0.1);
+        background: rgba(255, 255, 255, 0.8);
         position: fixed;
         top: 0;
         z-index: 999;
@@ -8972,7 +8976,7 @@ table {
     }
 
     .top-header-bg {
-        background: rgba(12, 12, 12, 0.18);
+        background: rgba(255, 255, 255, 0.8);
         position: fixed;
         top: 0;
         z-index: 999;
@@ -9169,7 +9173,7 @@ table {
         line-height: normal;
         margin-bottom: 15px;
     }
-    
+
     .alert {
         text-transform: uppercase;
         font-size: 12px;
@@ -9254,7 +9258,8 @@ table {
     }
 
     .intro-text h3 {
-        font-size: 22px;
+        font-family: 'Ubuntu', sans-serif !important;
+        font-size: 20px;
         margin-bottom: 15px;
     }
 
@@ -9761,18 +9766,12 @@ input, input::-webkit-input-placeholder, textarea::-webkit-input-placeholder{
 
 
 a.nav-link.active{
-  color: #f0151f !important;
+    color: #471AA0 !important;
 }
 
 .tabbing-box .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active{
-  color: #fff !important;
+    color: #fff !important;
 }
 
 
-
-
-
-
-
-
-
+.f-ubuntu { font-family: 'Ubuntu', sans-serif !important ;}

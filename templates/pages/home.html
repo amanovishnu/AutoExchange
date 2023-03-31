@@ -14,28 +14,31 @@
       <div class="carousel-item banner-max-height active item-bg">
         <img class="d-block w-100 h-100" src="{% static 'img/car-1.jpg' %}" alt="banner">
         <div class="carousel-content container banner-info-2 bi-2 text-left">
-          <h3>Wow Factor Standard</h3>
+          <div class="col-md-4">
+            {% include 'includes/messages.html' %}
+          </div>
+          <h4>Wow Factor Standard</h4>
           <h5>Allow us to guide you through the innovative stress<br>
             free approach in finding your dream car.</h5>
-          <a href="{% url 'services' %}" class="btn btn-lg btn-theme">Read more</a>
+          <a href="{% url 'services' %}" class="btn btn-sm btn-theme">Read more</a>
         </div>
       </div>
       <div class="carousel-item banner-max-height item-bg">
         <img class="d-block w-100 h-100" src="{% static 'img/car-2.jpg' %}" alt="banner">
         <div class="carousel-content container banner-info-2 bi-2 text-left">
-          <h3>Explore Your Dream Car</h3>
+          <h4>Explore Your Dream Car</h4>
           <h5>Allow us to guide you through the innovative stress<br>
             free approach in finding your dream car.</h5>
-          <a href="{% url 'services' %}" class="btn btn-lg btn-theme">Read more</a>
+          <a href="{% url 'services' %}" class="btn btn-sm btn-theme">Read more</a>
         </div>
       </div>
       <div class="carousel-item banner-max-height item-bg">
         <img class="d-block w-100 h-100" src="{% static 'img/car-3.jpg' %}" alt="banner">
         <div class="carousel-content container banner-info-2 bi-2 text-left">
-          <h3>We Are Wheel</h3>
+          <h4>We Are Wheel</h4>
           <h5>Allow us to guide you through the innovative stress<br>
             free approach in finding your dream car.</h5>
-          <a href="{% url 'services' %}" class="btn btn-lg btn-theme">Read more</a>
+          <a href="{% url 'services' %}" class="btn btn-sm btn-theme">Read more</a>
         </div>
       </div>
     </div>
@@ -115,7 +118,9 @@
     <!-- Main title -->
     <div class="main-title">
       <h1>Featured <span>Cars</span></h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <p class="f-dt_sans">
+        Get behind the wheel of your dream car with our hand-picked selection of featured rides at AutoExchange - where second-hand cars meet first-class quality
+      </p>
     </div>
     <!-- Slick slider area start -->
     <div class="slick-slider-area clearfix">
@@ -210,7 +215,10 @@
     <!-- Main title -->
     <div class="main-title">
       <h1>Latest <span>Cars</span></h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <p class="f-dt_sans">
+        "Drive into the future with our hand-picked selection of latest models in the featured section at Autoexchange - where
+        buying a second-hand car feels like buying brand new."
+      </p>
     </div>
     <div class="row">
       {% for car in latest_cars %}
@@ -299,7 +307,10 @@
     <!-- Main title -->
     <div class="main-title">
       <h1>Executive <span>Team</span></h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
+      <p class="f-dt_sans">
+        "At Autoexchange, our executive team is driven to deliver the best car-buying experience, steering our company towards
+        success with their expertise and passion."
+      </p>
     </div>
     <!-- Slick slider area Start -->
     <div class="slick-slider-area clearfix">
@@ -338,7 +349,7 @@
     <div class="row">
       <div class="col-lg-9 col-md-8 col-sm-12">
         <div class="intro-text">
-          <h3>Do You Have Questions ?</h3>
+          <h3 class="f-ubuntu">Do You Have Questions ?</h3>
         </div>
       </div>
       <div class="col-lg-3 col-md-4 col-sm-12">

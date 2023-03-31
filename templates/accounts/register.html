@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load socialaccount %}
+{% providers_media_js %}
 
 {% block title%} Register {% endblock %}
 
@@ -9,7 +11,7 @@
 <div class="sub-banner overview-bgi">
   <div class="container breadcrumb-area">
     <div class="breadcrumb-areas">
-      <h1>Create ans Account</h1>
+      <h1>Create a Account</h1>
       <ul class="breadcrumbs">
         <li><a href="{% url 'home' %}">Home</a></li>
         <li class="active">Register</li>
@@ -66,9 +68,16 @@
             </div>
             <div class="clearfix"></div>
             <ul class="social-list">
-              <li><a href="#" class="facebook-bg"><i class="fa fa-facebook facebook-i"></i><span>Facebook</span></a>
+              <li>
+                <a href="{% provider_login_url 'facebook' method='js_sdk' %}" class="facebook-bg">
+                  <i class="fa fa-facebook facebook-i"></i><span>Facebook</span>
+                </a>
               </li>
-              <li><a href="#" class="google-bg"><i class="fa fa-google google-i"></i><span>Google</span></a></li>
+              <li>
+                <a href="{% provider_login_url 'google' %}" class="google-bg">
+                  <i class="fa fa-google google-i"></i><span>Google</span>
+                </a>
+              </li>
             </ul>
           </form>
           <p>Already a member? <a href="{% url 'login' %}" class="thembo"> Login here</a></p>
