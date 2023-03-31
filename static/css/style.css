@@ -1,6 +1,6 @@
 html, body {
     height: 100%;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Ubuntu', sans-serif !important;
 }
 
 a {
@@ -649,14 +649,14 @@ input[type=checkbox]:checked + label:before {
 }
 
 .top-header .list-inline {
-    padding: 13px 0;
+    padding: 5px 0;
 }
 
 .list-inline a {
-    color: #fff;
+    color: white;
     margin-right: 15px;
     font-size: 14px;
-    font-weight: 400;
+    font-weight: 500;
     opacity: 0.9;
 }
 
@@ -670,10 +670,10 @@ input[type=checkbox]:checked + label:before {
 
 .top-header ul li {
     padding: 0 7px;
-    height: 50px;
+    /* height: 50px; */
     display: inline-block;
     text-align: center;
-    line-height: 44px;
+    /* line-height: 44px; */
     color: #aaa;
     font-size: 15px;
 }
@@ -700,7 +700,7 @@ input[type=checkbox]:checked + label:before {
 
 
 .th-2 .sign-in, .top-header .sign-in:hover {
-    line-height: 50px;
+    /* line-height: 50px; */
     color: #ececec;
     font-size: 13px;
     background: #2c3b6d;
@@ -919,11 +919,11 @@ input[type=checkbox]:checked + label:before {
 }
 
 .banner-bg {
-    
+
 }
 
 .item-bg {
-    
+
     height: 100vh;
     /*animation: bgburnsEast 25s linear infinite alternate;
     -webkit-animation: bgburnsEast 25s linear infinite alternate;*/
@@ -983,7 +983,7 @@ input[type=checkbox]:checked + label:before {
 .banner h4{
     font-weight: 300;
     margin-bottom: 0;
-    font-size: 50px;
+    font-size: 40px;
 }
 
 .banner .btn-lg {
@@ -1132,16 +1132,18 @@ input[type=checkbox]:checked + label:before {
     width: 100%;
 }
 
-.banner h3 {
+.banner h4 {
+    font-family: 'Ubuntu', sans-serif;
     color: #fff;
     margin-bottom: 20px;
-    font-size: 50px;
+    font-size: 40px;
     font-weight: 700;
     letter-spacing: normal;
     text-transform: uppercase;
 }
 
 .banner h5{
+    font-family: 'DM Sans', sans-serif !important;
     color: #fff;
     margin-bottom: 25px;
     font-size: 20px;
@@ -1910,11 +1912,12 @@ input[type=checkbox]:checked + label:before {
 /** Main title start **/
 .main-title {
     margin-bottom: 50px;
-    text-align: center;
+    text-align: left;
 }
 
 .main-title h1 {
-    font-size: 33px;
+    text-transform: uppercase;
+    font-family: 'Ubuntu', sans-serif !important;
     font-weight: 700;
     margin-bottom: 15px;
 }
@@ -1926,8 +1929,10 @@ input[type=checkbox]:checked + label:before {
 }
 
 .main-title p{
-    font-size: 16px;
+    font-family: 'DM Sans', sans-serif !important;
+    font-size: 20px;
     margin-bottom: 0;
+    font-style: italic;
 }
 
 /** Main title 2 start **/
@@ -3312,8 +3317,9 @@ input[type=checkbox]:checked + label:before {
 
 .team-1 .details h4 a{
     font-size: 20px;
-    font-weight: 400;
+    font-weight: 700;
     color: #212121;
+    font-family: 'Ubuntu', sans-serif;
 }
 
 .team-1 .details h4 a:hover{
@@ -3323,7 +3329,8 @@ input[type=checkbox]:checked + label:before {
 .team-1 .details h5 {
     font-size: 15px;
     color: #535353;
-    font-weight: 400;
+    font-weight: 500;
+    font-family: 'Ubuntu', sans-serif;
 }
 
 .team-1 .social-list a:hover{
@@ -4658,7 +4665,7 @@ footer {
 
 /** Listings parallax start **/
 .listings-parallax {
-    
+
     z-index: 0;
     background-position: center center;
     background-repeat: no-repeat;
@@ -5213,7 +5220,7 @@ footer {
     z-index: 0;
     right: 15px;
     font-weight: 600;
-    top: 5px;
+    top: 25px;
     margin-top: -25px;
     font-family: "Poppins", sans-serif;
 
@@ -5224,6 +5231,8 @@ footer {
     margin-bottom: 0;
     font-size: 15px;
     position: relative;
+    font-style: italic;
+    font-family: 'DM Sans', sans-serif !important;
 }
 
 /** Content area srart **/
@@ -5474,7 +5483,7 @@ footer {
 }
 
 .contact-section .bg-img {
-    
+
     background-size: cover;
     top: 0;
     bottom: 0;
@@ -7117,10 +7126,17 @@ table {
 }
 
 .about-car .best-used-car h3 {
-    font-size: 25px;
+    font-size: 35px;
     font-weight: 500;
     margin-bottom: 15px;
     text-transform: uppercase;
+    font-family: 'DM Sans', sans-serif;
+}
+
+.about-car .best-used-car p {
+    font-family: 'DM Sans', sans-serif;
+    /* font-style: italic; */
+    font-size: 15px;
 }
 
 .about-car .best-used-car ul li {
@@ -8132,8 +8148,10 @@ table {
     }
 
     .sticky-header .navbar-expand-lg .navbar-nav .nav-link {
-        color: #fff;
+        font-family: 'Ubuntu', sans-serif;
         opacity: 0.9;
+        font-weight: 500;
+        font-size: 16px;
     }
 
     .sh-2 .navbar-expand-lg .navbar-nav .nav-link{
@@ -8165,10 +8183,10 @@ table {
 
     .sticky-header {
         position: fixed;
-        top: 49px;
+        top: 36px;
         z-index: 9999;
         width: 100%;
-        background: rgba(12,12,12,0.1);
+        background: rgba(255,255,255,0.9);
     }
 
     .mh-4{
@@ -8192,7 +8210,7 @@ table {
     }
 
     .top-header-bg{
-        background: rgba(12,12,12,0.1);
+        background: rgba(0, 0, 0, 0.9);
         position: fixed;
         top: 0;
         z-index: 999;
@@ -8504,6 +8522,7 @@ table {
     }
 
     .banner h5 {
+        font-family: 'DM Sans', sans-serif !important;
         font-size: 18px;
         line-height: 30px;
         margin-bottom: 20px;
@@ -8972,7 +8991,7 @@ table {
     }
 
     .top-header-bg {
-        background: rgba(12, 12, 12, 0.18);
+        background: rgba(0, 0, 0, 0.9);
         position: fixed;
         top: 0;
         z-index: 999;
@@ -9169,7 +9188,7 @@ table {
         line-height: normal;
         margin-bottom: 15px;
     }
-    
+
     .alert {
         text-transform: uppercase;
         font-size: 12px;
@@ -9254,7 +9273,8 @@ table {
     }
 
     .intro-text h3 {
-        font-size: 22px;
+        font-family: 'Ubuntu', sans-serif !important;
+        font-size: 20px;
         margin-bottom: 15px;
     }
 
@@ -9761,18 +9781,13 @@ input, input::-webkit-input-placeholder, textarea::-webkit-input-placeholder{
 
 
 a.nav-link.active{
-  color: #f0151f !important;
+    color: #471AA0 !important;
 }
 
 .tabbing-box .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active{
-  color: #fff !important;
+    color: #fff !important;
 }
 
 
-
-
-
-
-
-
-
+.f-ubuntu { font-family: 'Ubuntu', sans-serif !important ;}
+.f-dt_sans {font-family: 'DM Sans', sans-serif !important;}

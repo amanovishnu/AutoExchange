@@ -1,0 +1,16 @@
+{% extends 'admin/base.html' %}
+{% load static %}
+
+{% block title%} Admin Console {% endblock %}
+
+{% block branding %}
+<h1 id="head">
+  <a href="/admin">
+    <img height="40" src="{% static 'img/logos/white_black_logo.png' %}" alt="" class="brand_img">
+  </a>
+</h1>
+{% endblock %}
+
+{% block extrastyle %}
+<link rel="stylesheet" href="{% static 'css/admin.css' %}">
+{% endblock %}

@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title%} Dashboard {% endblock %}
+
+{% block content %}
+
+<!-- Sub banner start -->
+<div class="sub-banner overview-bgi">
+  <div class="container breadcrumb-area">
+    <div class="breadcrumb-areas">
+      <h1>Dashboard</h1>
+      <ul class="breadcrumbs">
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li class="active">{{user.first_name}} {{user.last_name}}</li>
+      </ul>
+    </div>
+  </div>
+</div>
+<!-- Sub Banner end -->
+
+<!--   Dashboard Start   -->
+<div class="container mt-50 mb-50">
+  <div class="main-title" style="text-align:left !important;">
+    {% include 'includes/messages.html' %}
+    <h1>Welcome <span>{{user.first_name}} {{user.last_name}}</span></h1>
+    <p>Here are the cars that you have inquired about</p>
+  </div>
+  <table class="table table-hover table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Car Name</th>
+        <th scope="col">Location</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      {%  if enquiries %}
+        {% for enquiry in enquiries %}
+        <tr>
+          <th scope="row">{{enquiry.id}}</th>
+          <td>{{enquiry.car_title}}</td>
+          <td>{{enquiry.city}}</td>
+          <td><a href="{% url 'car_detail' enquiry.car_id %}" class="btn btn-outline-dark">View Car</a></td>
+        </tr>
+        {% endfor %}
+      {% else %}
+      <tr>
+        <td colspan="5" class="alert alert-warning">
+          <div class="text-center">No Enquiries Made So Far</div>
+        </td>
+      </tr>
+
+      {% endif %}
+
+    </tbody>
+  </table>
+</div>
+<!--   Dashboard End   -->
+
+{% endblock %}

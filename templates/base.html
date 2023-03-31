@@ -4,7 +4,7 @@
 <html>
 
 <head>
-  <title></title>
+  <title>AutoExchange | {% block title%} {% endblock %}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="utf-8">
 
@@ -28,11 +28,15 @@
   <link rel="stylesheet" type="text/css" id="style_sheet" href="{% static 'css/skins/red.css' %}">
 
   <!-- Favicon icon -->
-  <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}" type="image/x-icon">
+  <link rel="shortcut icon" href="{% static 'img/favicon.png' %}" type="image/x-icon">
 
   <!-- Google fonts -->
-  <link rel="stylesheet" type="text/css"
-    href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800%7CPlayfair+Display:400,700%7CRoboto:100,300,400,400i,500,700">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans&family=Lato&family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800%7CPlayfair+Display:400,700%7CRoboto:100,300,400,400i,500,700">
+
+
 
   <link rel="stylesheet" type="text/css" href="{% static 'css/ie10-viewport-bug-workaround.css' %}">
   <script src="{% static 'js/ie-emulation-modes-warning.js' %}"></script>
@@ -50,8 +54,8 @@
   <!-- Full Page Search Start -->
   <div id="full-page-search">
     <button type="button" class="close">×</button>
-    <form action="https://storage.googleapis.com/theme-vessel/carhouse/index.html#" class="search-header">
-      <input type="search" value="" placeholder="type keyword(s) here. Eg: audi, benz etc" />
+    <form action="{% url 'search' %}" class="search-header">
+      <input type="search" value="" placeholder="type keyword(s) here. Eg: audi, benz etc" name="keyword" />
       <button type="submit" class="btn btn-sm button-theme">Search</button>
     </form>
   </div>
